@@ -185,21 +185,21 @@ console.log("Running Apos Bot!");
     }
 
     function isFood(blob, cell) {
-        if (!cell.isVirus() && compareSize(cell, blob, 1.30) || (cell.size <= 11)) {
+        if (!cell.isVirus() && compareSize(cell, blob, 1.15) || (cell.size <= 11)) {
             return true;
         }
         return false;
     }
 
     function isThreat(blob, cell) {
-        if (!cell.isVirus() && compareSize(blob, cell, 1.30)) {
+        if (!cell.isVirus() && compareSize(blob, cell, 1.15)) {
             return true;
         }
         return false;
     }
 
     function isVirus(blob, cell) {
-        if (cell.isVirus() && compareSize(cell, blob, 1.30)) {
+        if (cell.isVirus() && compareSize(cell, blob, 1.15)) {
             return true;
         } else if (cell.isVirus() && cell.color.substring(3,5).toLowerCase() != "ff") {
             return true;
@@ -748,7 +748,7 @@ console.log("Running Apos Bot!");
 
                         var splitDangerDistance = allPossibleThreats[i].size + splitDistance - 250;
 
-                        var normalDangerDistance = allPossibleThreats[i].size + 150;
+                        var normalDangerDistance = allPossibleThreats[i].size + 150 + allPossibleThreats[i].size;
 
                         var shiftDistance = player[k].size;
 
